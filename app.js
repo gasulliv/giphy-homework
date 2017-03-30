@@ -5,13 +5,15 @@
 
         function displayGif(){
 
+            $(".newButton").on("click", function(){
             //creating the game variable
             // In this case, the "this" keyword refers to the button that was clicked
-            var game = $(this).attr("#addGame");
+            var game = $(this).attr("game-name");
 
              // creating url to search Giphy for video games
 
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + game + "&api_key=dc6zaTOxFJmzC&limit=10";
+            console.log(queryURL);
 
           // e.preventDefault(e);
           // console.log("hello");
@@ -22,30 +24,43 @@
             method: "GET"
             }) .done(function(response) {
 
-                //creating a div to hold the gifs
+                //creating a variable for the repsonse data
 
-                var gameDiv = $("<div class = 'gameglitch'>");
+                var results = response.data;
 
-                //retrieving the urls for the gifs
 
-                var gifURL = response.data.url;
+                //looping through reponse data
 
-                //creating an element to hold the gifs
+                for ( var i = 0 ; i < results.length; i++ ){
 
-                var image = $("<img>").attr("src", gifURL);
+                   //retrieving the urls for the gifs
 
-                //appending the image to the game div
+                    var gifURL = results[i].bitly_gif_url;
+                    console.log(gifURL);
 
-                gameDiv.append(image);
+                    //creating a div to hold the gifs
 
-                //prepend that gif the above the other gifs
+                    var gameDiv = $("<div class = 'gameglitch'>");
 
-                $("#game").prepend(gameDiv);
+                    //creating an element to hold the gifs
 
+                    var image = $("<img>").attr("src", gifURL);
+
+                    //appending the image to the game div
+
+                    gameDiv.append(image);
+
+                    //prepend that gif the above the other gifs
+
+                    $("#game").prepend(gameDiv);
+
+                }
+
+              });
             });
-        }
+          }
 
-        //create a function with a for loop that creates buttons based on input when the game button is clicked
+      //create a function with a for loop that creates buttons based on input when the game button is clicked
 
         function createButton(){
 
@@ -111,5 +126,3 @@
 
         console.log('test');
       }
-
-
