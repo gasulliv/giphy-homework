@@ -32,3 +32,15 @@ body {
 #glitch-form {
 	margin-left: 800px;
 }
+
+#games {
+	width: 1200px;
+	height:100%;
+	margin-top:20px;
+	margin-left:50px;
+}
+
+.gameglitch {
+	float:left;
+	margin-left: 20px;
+}
