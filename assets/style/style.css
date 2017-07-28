@@ -1,9 +1,92 @@
 body {
-	background-color: #e5e4e4;
+	background-color: gray;
+    overflow-x: hidden;
+    padding:0px;
+    margin:0px;
 }
 
+h1 {
+    text-align: center;
+}
+
+
+/*nav*/
+
+.light {
+  font-weight: 400;
+
+}
+.navbar-custom {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  background-color: black;
+}
+.navbar-custom .navbar-toggle {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+}
+.navbar-custom .navbar-toggle:focus,
+.navbar-custom .navbar-toggle:active {
+  outline: none;
+}
+.navbar-custom .navbar-brand {
+  font-weight: 700;
+
+}
+.navbar-custom .navbar-brand:focus {
+  outline: none;
+
+}
+.navbar-custom a {
+  color: white;
+}
+.navbar-custom .nav li a {
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+.navbar-custom .nav li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  outline: none;
+  background-color: transparent;
+}
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a:active {
+  outline: none;
+  background-color: transparent;
+}
+.navbar-custom .nav li.active {
+  outline: none;
+}
+.navbar-custom .nav li.active a {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-custom .nav li.active a:hover {
+  color: white;
+}
+@media (min-width: 768px) {
+  .navbar-custom {
+    padding: 20px 0;
+    border-bottom: none;
+    letter-spacing: 1px;
+    background: transparent;
+    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+  .navbar-custom.top-nav-collapse {
+    padding: 0;
+    background: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+
 #addGame {
-	background-color: #ff7f50; /* Green */
+	background-color: slategray; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -16,7 +99,7 @@ body {
 
 .newButton {
 
-	background-color: #ff7f50; /* coral*/
+	background-color: slategray; /* coral*/
 	margin-left:10px;
     border: none;
     color: white;
@@ -29,18 +112,84 @@ body {
 
 }
 
-#glitch-form {
-	margin-left: 800px;
+#game-input {
+	color:gray;
 }
 
 #games {
-	width: 1200px;
-	height:100%;
-	margin-top:20px;
-	margin-left:50px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right:10px;
+	margin-left:0px;
+    background-color: gray;
 }
 
 .gameglitch {
 	float:left;
 	margin-left: 20px;
+    background-color: gray;
 }
+
+.intro {
+  text-align: center;
+  width: 100%;
+  display: table;
+  height: auto;
+  padding: 100px 0px;
+  background: url("https://media.giphy.com/media/xT39DpoUIGwV1tO8mI/giphy.gif") no-repeat bottom scroll;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: white;
+}
+.intro .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+  padding:100px;
+}
+.intro .intro-body .brand-heading {
+  font-size: 40px;
+}
+.intro .intro-body .intro-text {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .intro {
+    height: 100%;
+    padding: 0px;
+  }
+  .intro .intro-body .brand-heading {
+    font-size: 60px;
+  }
+  .intro .intro-body .intro-text {
+    font-size: 26px;
+  }
+}
+
+.content-section, .gif-section {
+  background-color: white;
+  width:100%;
+  padding: 40px;
+}
+
+.container {
+    width: 100%;
+}
+.gif-section {
+    background-color: gray;
+}
+
+@media (min-width: 767px) {
+  .content-section {
+    padding-top: 35px;
+    background-color: white;
+  }
+
+  .white {
+    color:white;
+  }
